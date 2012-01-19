@@ -135,7 +135,7 @@ div.alert-message {
   float:left;
 }
 
-form.edit_user ul.inputs-list li {
+form.edit_user div.input-list-item {
   clear: left;
 }
   
@@ -145,4 +145,7 @@ form.edit_user .inputs-list input[type="checkbox"] {
 form.edit_user .inputs-list span {
   margin: 5px;
 }
-
+div.input.listinput {
+  float:left;
+  margin-left: 0px;
+}
