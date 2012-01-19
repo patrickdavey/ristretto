@@ -123,4 +123,17 @@ div.alert-message {
   background-color:#0064CD!important;
   color: white;
 }
-
+.handle {
+  background-image: url("/images/draggable.png");
+  background-position: 0 0;
+  cursor: move;
+  display: block;
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+  float:left;
+}
+.inputs-list input[type="checkbox"] {
+  float: none;
+  margin-left: 0px;
+}

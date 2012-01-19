@@ -44,19 +44,17 @@
   <div class="clearfix">
     <%= label_tag :panels %>
     <div class="input">
-      <div class="inputs-list dashboard-panels">
+      <ul class="inputs-list dashboard-panels">
       <% if @user.panels.present? %>
         <% User::DASHBOARD_PANELS.sort_by {|v,k| @user.panels[v] || 'zzz'}.each do |panel| %>
-        <label><%= check_box_tag "user[panels][#{panel}]", @user.panels.include?(panel) ? @user.panels[panel] : -1, @user.panels.include?(panel) %><%= panel.humanize %></label>
+        <li><label ><a href="#" class="handle"></a><%= check_box_tag "user[panels][#{panel}]", @user.panels.include?(panel) ? @user.panels[panel] : -1, @user.panels.include?(panel) %><%= panel.humanize %></label></li>
         <% end %>
       <% else %>
         <% User::DASHBOARD_PANELS.sort_by {|v,k| v}.each do |panel| %>
-        <label><%= check_box_tag "user[panels][#{panel}]", -1, false %><%= panel.humanize %></label>
+          <li><label><%= check_box_tag "user[panels][#{panel}]", -1, false %><%= panel.humanize %></label></li>
+        <% end %>
       <% end %>
-
-      
-      <% end %>
-      </div>
+      </ul>
     </div>
   </div>
   <% end %>
