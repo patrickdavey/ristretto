@@ -47,7 +47,7 @@
       <ul class="inputs-list dashboard-panels">
       <% if @user.panels.present? %>
         <% User::DASHBOARD_PANELS.sort_by {|v,k| @user.panels[v] || 'zzz'}.each do |panel| %>
-        <li><label ><a href="#" class="handle"></a><%= check_box_tag "user[panels][#{panel}]", @user.panels.include?(panel) ? @user.panels[panel] : -1, @user.panels.include?(panel) %><%= panel.humanize %></label></li>
+        <li><label ><a href="#" class="handle"></a><%= check_box_tag "user[panels][#{panel}]", @user.panels.include?(panel) ? @user.panels[panel] : -1, @user.panels.include?(panel) %><span><%= panel.humanize %></span></label></li>
         <% end %>
       <% else %>
         <% User::DASHBOARD_PANELS.sort_by {|v,k| v}.each do |panel| %>
